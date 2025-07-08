@@ -21,7 +21,7 @@ This is a solution to the [QR Code Component Challenge](https://www.frontendment
 ### Screenshot
 
 ![](design/preview.jpg)
-![](design/previewdesktop.JPG)
+![](design/desktoppreview.JPG)
 
 
 ### Links
