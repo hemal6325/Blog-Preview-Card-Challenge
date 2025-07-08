@@ -26,8 +26,8 @@ This is a solution to the [QR Code Component Challenge](https://www.frontendment
 
 ### Links
 
-- Solution URL: (https://github.com/hemal6325/QR-Code-Component-Challenge)
-- Live Site URL: (https://hemal6325.github.io/QR-Code-Component-Challenge)
+- Solution URL: (https://github.com/hemal6325/Blog-Preview-Card-Challenge/)
+- Live Site URL: (https://hemal6325.github.io/Blog-Preview-Card-Challenge/)
 
 ## My Process
 I built this project using HTML and CSS, focusing on layout design and responsive styling. Through it, I learned Flexbox, Semantic Markup, and how to create visually balanced components.
@@ -37,6 +37,7 @@ I built this project using HTML and CSS, focusing on layout design and responsiv
 - HTML5 Semantic Structure
 - CSS3 Custom Properties
 - Flexbox
+- Mobile First Workflow
 
 
 ### What I Learned
@@ -46,21 +47,20 @@ During this experience, I gained valuable skills and deeper understanding of the
 
 ```css
 :root{
-    
-    --primaryFont: "Outfit", sans-serif;
-    --fontSize: 15px;
+    --primaryFont: "Figtree", sans-serif;
+    --fontSize: 16px;
 
+    --Yellow: hsl(47, 88%, 63%);
     --White: hsl(0, 0%, 100%);
-    --Slate300: hsl(212, 45%, 89%);
-    --Slate500: hsl(216, 15%, 48%);
-    --Slate900: hsl(218, 44%, 22%);
+    --Gray500: hsl(0, 0%, 42%);
+    --Gray950: hsl(0, 0%, 7%);
 }
 
 *,
 *::after,
 *::before{
-    padding: 0;
     margin: 0;
+    padding: 0;
     list-style: none;
     box-sizing: border-box;
 }
@@ -68,10 +68,9 @@ During this experience, I gained valuable skills and deeper understanding of the
 html, body{
     height: 100%;
 }
+
 body{
-    background-color: var(--Slate300);
-    font-family: var(--primaryFont);
-    font-weight: 400;
+    background: var(--Yellow);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,42 +82,115 @@ h3,
 h4,
 h5,
 h6{
-    font-weight: 700;
-    margin-bottom: 15px;
+    font-family: var(--primaryFont);
 }
 
 .card{
-    background-color: var(--White);
+    background: var(--White);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 14px;
+    width: 400px;
     border-radius: 15px;
-    padding: 15px;
-    width: 320px;
+
+    border: 1px solid var(--Gray950);
+    box-shadow: 8px 8px 0px var(--Gray950);
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover{
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px var(--Gray950);
 }
 
 .card img{
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 0px;
+    border-radius: 25px;
+    padding: 15px;
 }
 
 .card .card-body{
-    margin: 20px 15px;
-    text-align: center;
+    text-align: left;
+    padding-left: 20px;
 }
 
-.card .card-body h4{
-    color: var(--Slate900);
-    font-size: 22px;
+.card .card-body span{
+    font-family: var(--primaryFont);
+    font-weight: 900;
+    color: var(--Gray950);
+    background-color: var(--Yellow);
+    font-size: var(--fontSize);
+    padding: 10px 30px 10px 30px;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card .card-body h6{
+    color: var(--Gray500);
+    font-size: var(--fontSize);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.card .card-body h1{
+    color: var(--Gray950);
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.card .card-body h1:hover{
+    color: var(--Yellow);
+    font-weight: 900;
+}
+
+.card .card-body a{
+    list-style: none;
+    text-decoration: none;
 }
 
 .card .card-body p{
-    color: var(--Slate500);
+    font-family: var(--primaryFont);
     font-size: var(--fontSize);
+    color: var(--Gray500);
+    text-align: left;
 }
 
-.card .attribution{
-    font-size: 10px;
-    font-family: var(--primaryFont);
+.card .card-body .authordetails{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.card .card-body .authordetails img{
+    
+}
+
+.card .card-body .authordetails h2{
+    text-align: left;
+    font-size: var(--fontSize);
+    font-weight: 900;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+
+@media (max-width: 375px) {
+
+  .card .card-body h1 {
+    font-size: 20px;
+  }
+
+  .card .card-body p {
+    font-size: 14px;
+  }
 }
 
 ```
@@ -129,7 +201,7 @@ I would like to make my own QR Generator so this could be used as a default temp
 
 ### Useful Resources
 
-- [FLEXBOX FROGGY](https://flexboxfroggy.com/#es) - This helped me to understand better how to use flexbox.
+- [FLEXBOX FROGGY](https://flexboxfroggy.com/) - This helped me to understand better how to use flexbox.
 
 
 ## Author
@@ -140,9 +212,7 @@ I would like to make my own QR Generator so this could be used as a default temp
 ## Acknowledgments
 
 
-At some point i was a little stuck with setting the style for the image. And i found this video helpful.
-
-(https://youtu.be/UBI4CLoAres?si=eTldObVGXUh5BvSi)
+At some point i was a little stuck with setting the style for the image. And i solved this problem using online Resources, ChatGPT & Google Bard.
 
 
 **Have Fun Building!** 🚀
