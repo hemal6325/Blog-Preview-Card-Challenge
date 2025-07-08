@@ -1,0 +1,146 @@
+:root{
+    --primaryFont: "Figtree", sans-serif;
+    --fontSize: 16px;
+
+    --Yellow: hsl(47, 88%, 63%);
+    --White: hsl(0, 0%, 100%);
+    --Gray500: hsl(0, 0%, 42%);
+    --Gray950: hsl(0, 0%, 7%);
+}
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    background: var(--Yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: var(--primaryFont);
+}
+
+.card{
+    background: var(--White);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 14px;
+    width: 400px;
+    border-radius: 15px;
+
+    border: 1px solid var(--Gray950);
+    box-shadow: 8px 8px 0px var(--Gray950);
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover{
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px var(--Gray950);
+}
+
+.card img{
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.card .card-body{
+    text-align: left;
+    padding-left: 20px;
+}
+
+.card .card-body span{
+    font-family: var(--primaryFont);
+    font-weight: 900;
+    color: var(--Gray950);
+    background-color: var(--Yellow);
+    font-size: var(--fontSize);
+    padding: 10px 30px 10px 30px;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card .card-body h6{
+    color: var(--Gray500);
+    font-size: var(--fontSize);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.card .card-body h1{
+    color: var(--Gray950);
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.card .card-body h1:hover{
+    color: var(--Yellow);
+    font-weight: 900;
+}
+
+.card .card-body a{
+    list-style: none;
+    text-decoration: none;
+}
+
+.card .card-body p{
+    font-family: var(--primaryFont);
+    font-size: var(--fontSize);
+    color: var(--Gray500);
+    text-align: left;
+}
+
+.card .card-body .authordetails{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.card .card-body .authordetails img{
+    
+}
+
+.card .card-body .authordetails h2{
+    text-align: left;
+    font-size: var(--fontSize);
+    font-weight: 900;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+
+@media (max-width: 375px) {
+
+  .card .card-body h1 {
+    font-size: 20px;
+  }
+
+  .card .card-body p {
+    font-size: 14px;
+  }
+}
